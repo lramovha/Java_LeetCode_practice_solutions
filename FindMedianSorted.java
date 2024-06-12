@@ -6,7 +6,7 @@ class FindMedianSorted {
         int m = nums1.length;
         int n = nums2.length;
         
-        int[] mergedArray = new int[m + n];
+        int[] mergedArray = new int[m+n];
         int i=0, j=0, k=0;
 
         while(i < m && j < n){
@@ -22,14 +22,15 @@ class FindMedianSorted {
             mergedArray[k++] = nums1[i++];
         }
 
-        while (j < n) {
+        while (j < n){
             mergedArray[k++] = nums2[j++];
         }
 
         int totalLength = m + n;
-        if (totalLength % 2 == 0) {
-            return (mergedArray[totalLength / 2 - 1] + mergedArray[totalLength / 2]) / 2.0;
-        } else {
+        if (totalLength % 2 == 0){
+            return (mergedArray[(totalLength / 2) - 1] + mergedArray[totalLength / 2]) / 2.0;
+        }
+        else{
             return mergedArray[totalLength / 2];
         }
     }
